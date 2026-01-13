@@ -18,7 +18,9 @@ public class XadrezPartida {
         }
         return partida;
     }private void setupInitial() {
-        tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(2,3));
+        tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(0,0));
+        tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(7,0));
+        tabuleiro.lugarPeca(new Rei(tabuleiro, Cor.WHITE), new Posicao(5,3));
         tabuleiro.lugarPeca(new Rei(tabuleiro, Cor.WHITE), new Posicao(3,3));
     }
 }
