@@ -1,7 +1,7 @@
 package XadrezJogo.Xadrez;
 
-import XadrezJogo.Tabuleiro.Peca;
-import XadrezJogo.Tabuleiro.Tabuleiro;
+import XadrezJogo.JogoTabuleiro.Peca;
+import XadrezJogo.JogoTabuleiro.Tabuleiro;
 
 public class XadrezPeca extends Peca {
     private Cor cor;
@@ -13,5 +13,9 @@ public class XadrezPeca extends Peca {
 
     public Cor getCor() {
         return this.cor;
+    }
+
+    public XadrezPosicao getXadrezPosicao() {
+        return XadrezPosicao.daPosicao(posicao);
     }
 }
