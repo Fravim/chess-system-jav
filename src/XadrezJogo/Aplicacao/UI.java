@@ -1,5 +1,5 @@
 package XadrezJogo.Aplicacao;
-
+//a
 import XadrezJogo.Xadrez.Cor;
 import XadrezJogo.Xadrez.XadrezPeca;
 import XadrezJogo.Xadrez.XadrezPosicao;

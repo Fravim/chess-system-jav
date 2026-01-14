@@ -1,5 +1,5 @@
 package XadrezJogo.Aplicacao;
-
+//a
 import XadrezJogo.Xadrez.XadrezPartida;
 import XadrezJogo.Xadrez.XadrezPeca;
 import XadrezJogo.Xadrez.XadrezPosicao;
@@ -7,7 +7,6 @@ import XadrezJogo.Xadrez.XadrezPosicao;
 import java.util.Scanner;
 
 public class Main {
-//testeemail
 
     public static void main(String[] args) {
         XadrezPartida xadrezPartida = new XadrezPartida();
