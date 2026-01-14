@@ -17,8 +17,24 @@ public abstract class Peca {
     protected Tabuleiro getTabuleiro() {
         return this.tabuleiro;
     }
-
     public Cor getCor() {
         return cor;
     }
+
+    public abstract boolean[][] movimentosPossiveis();
+    public boolean movimentoPosivel(Posicao posicao) {
+        return movimentosPossiveis() [posicao.getLinha()][posicao.getColuna()];
+    }
+    public boolean existeAlgumMovimento() {
+        boolean[][] auxMovi = movimentosPossiveis();
+        for (int i = 0; i < auxMovi.length; i++) {
+            for (int j = 0; j < auxMovi[i].length; j++) {
+                if (auxMovi[i][j] == true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public abstract void mover();
 }
