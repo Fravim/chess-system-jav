@@ -1,5 +1,4 @@
 package XadrezJogo.JogoTabuleiro;
-//a
 public class Posicao {
 
     private int linha;

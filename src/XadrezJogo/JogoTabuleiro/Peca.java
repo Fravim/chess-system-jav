@@ -1,5 +1,5 @@
 package XadrezJogo.JogoTabuleiro;
-//a
+
 import XadrezJogo.Xadrez.Cor;
 
 public abstract class Peca {

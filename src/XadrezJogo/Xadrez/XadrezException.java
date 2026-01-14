@@ -1,5 +1,4 @@
 package XadrezJogo.Xadrez;
-//a
 import XadrezJogo.JogoTabuleiro.TabuleiroException;
 
 public class XadrezException extends TabuleiroException {

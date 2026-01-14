@@ -1,5 +1,4 @@
 package XadrezJogo.Xadrez;
-//a
 import XadrezJogo.JogoTabuleiro.Posicao;
 
 public class XadrezPosicao {

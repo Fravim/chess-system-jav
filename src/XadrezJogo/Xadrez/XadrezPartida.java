@@ -1,5 +1,5 @@
 package XadrezJogo.Xadrez;
-//a
+
 import XadrezJogo.JogoTabuleiro.Peca;
 import XadrezJogo.JogoTabuleiro.Posicao;
 import XadrezJogo.JogoTabuleiro.Tabuleiro;
