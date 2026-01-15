@@ -74,6 +74,9 @@ public class XadrezPartida {
     }
 
     private void validarPosicaoDestino(Posicao origem, Posicao destino) {
+        if (!tabuleiro.peca(origem).movimentoPosivel(destino)) {
+            throw new TabuleiroException("A peça escolhida não pode se mover para posição de destino.");
+        }
 
     }
 
