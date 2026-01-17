@@ -53,13 +53,14 @@ public class XadrezPartida {
 
         Peca pecaCapturada = fazerMovimento(origem, destino);
 
+
         proximoTurno();
 
         return (XadrezPeca) pecaCapturada;
     }
 
     private Peca fazerMovimento(Posicao origem, Posicao destino) {
-        Peca p = tabuleiro.removePeca(origem);
+        XadrezPeca p = (XadrezPeca)tabuleiro.removePeca(origem);
         Peca pecaCapturada = tabuleiro.removePeca(destino);
         tabuleiro.lugarPeca(p, destino);
         return pecaCapturada;
@@ -80,10 +81,9 @@ public class XadrezPartida {
     }
 
     private void validarPosicaoDestino(Posicao origem, Posicao destino) {
-        if (!tabuleiro.peca(origem).movimentoPosivel(destino)) {
+        if (!tabuleiro.peca(origem).movimentosPossiveis()[destino.getLinha()][destino.getColuna()]) {
             throw new TabuleiroException("A peça escolhida não pode se mover para posição de destino.");
         }
-
     }
 
     private void proximoTurno() {

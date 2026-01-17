@@ -75,21 +75,18 @@ public class UI {
     }
 
     private static void printPeca(XadrezPeca peca, boolean fundoTela) {
-        if(fundoTela) {
-            System.out.print(ANSI_BLACK_BACKGROUND);
+        if (fundoTela) {
+            System.out.print(ANSI_BLUE_BACKGROUND); // Usando Azul como no exemplo para destacar melhor
         }
         if (peca == null) {
-            System.out.print("-");
+            System.out.print("-" + ANSI_RESET);
         } else {
-
             if (peca.getCor() == Cor.WHITE) {
                 System.out.print(ANSI_WHITE + peca + ANSI_RESET);
             } else {
-
                 System.out.print(ANSI_YELLOW + peca + ANSI_RESET);
             }
         }
-
         System.out.print(" ");
     }
 }
