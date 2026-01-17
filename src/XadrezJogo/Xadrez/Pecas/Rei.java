@@ -76,8 +76,6 @@ public class Rei extends XadrezPeca {
         return p == null || p.getCor() !=getCor();
     }
 
-    //Acima
-
 
 
     @Override
