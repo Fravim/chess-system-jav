@@ -7,11 +7,16 @@ import XadrezJogo.JogoTabuleiro.TabuleiroException;
 import XadrezJogo.Xadrez.Pecas.Rei;
 import XadrezJogo.Xadrez.Pecas.Torre;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class XadrezPartida {
 
     private int turno;
     private Cor jogadorAtual;
     private Tabuleiro tabuleiro;
+    private List<Peca> pecasNoTabuleiro = new ArrayList<>();
+    private List<Peca> pecasCapturadas = new ArrayList<>();
 
     public XadrezPartida() {
         tabuleiro = new Tabuleiro(8, 8);
@@ -47,22 +52,22 @@ public class XadrezPartida {
     public XadrezPeca movimentoXadrez(XadrezPosicao posicaoOrigem, XadrezPosicao posicaoDestino) {
         Posicao origem = posicaoOrigem.paraPosicao();
         Posicao destino = posicaoDestino.paraPosicao();
-
         validarPosicaoOrigem(origem);
         validarPosicaoDestino(origem, destino);
-
         Peca pecaCapturada = fazerMovimento(origem, destino);
-
-
         proximoTurno();
-
         return (XadrezPeca) pecaCapturada;
     }
 
     private Peca fazerMovimento(Posicao origem, Posicao destino) {
-        XadrezPeca p = (XadrezPeca)tabuleiro.removePeca(origem);
+        Peca p = tabuleiro.removePeca(origem);
         Peca pecaCapturada = tabuleiro.removePeca(destino);
         tabuleiro.lugarPeca(p, destino);
+        if (pecaCapturada != null) {
+            pecasNoTabuleiro.remove(pecaCapturada);
+            pecasCapturadas.add(pecaCapturada);
+        }
+
         return pecaCapturada;
     }
 
@@ -93,6 +98,7 @@ public class XadrezPartida {
 
     private void lugarNovaPeca(char coluna, int linha, XadrezPeca peca) {
         tabuleiro.lugarPeca(peca, new XadrezPosicao(coluna, linha).paraPosicao());
+        pecasNoTabuleiro.add(peca);
     }
 
     private void setupInitial() {
