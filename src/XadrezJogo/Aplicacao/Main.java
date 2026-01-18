@@ -5,7 +5,9 @@ import XadrezJogo.Xadrez.XadrezPartida;
 import XadrezJogo.Xadrez.XadrezPeca;
 import XadrezJogo.Xadrez.XadrezPosicao;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -13,10 +15,12 @@ public class Main {
     public static void main(String[] args) {
         XadrezPartida xadrezPartida = new XadrezPartida();
         Scanner sc = new Scanner(System.in);
+        List<XadrezPeca> capturadas = new ArrayList<>();
+
         while (true) {
             try {
                 UI.limparTela();
-                UI.printPartida(xadrezPartida);
+                UI.printPartida(xadrezPartida, capturadas);
                 System.out.println();
                 System.out.print("Origem: ");
                 XadrezPosicao origem = UI.lerXadrezPosicao(sc);
@@ -30,6 +34,9 @@ public class Main {
                 XadrezPosicao destino = UI.lerXadrezPosicao(sc);
 
                 XadrezPeca pecaCapturada = xadrezPartida.movimentoXadrez(origem, destino);
+                if (pecaCapturada != null) {
+                    capturadas.add(pecaCapturada);
+                }
 
 
     }
