@@ -1,5 +1,5 @@
 package XadrezJogo.Aplicacao;
-//a
+//LEMBRAR DE MONTAR O TABULEIRO DA FORMA CORRETA AMANHA 20/01/2026
 import XadrezJogo.Xadrez.XadrezException;
 import XadrezJogo.Xadrez.XadrezPartida;
 import XadrezJogo.Xadrez.XadrezPeca;
